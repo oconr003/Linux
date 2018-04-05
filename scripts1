@@ -1,0 +1,13 @@
+echo "Enter username"
+read newUsername
+
+sudo useradd $newUsername
+sudo passwd $newUsername
+
+if grep -q $newUsername /etc/passwd
+then
+echo "User added"
+else
+echo "User not added"
+fi
+
