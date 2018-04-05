@@ -1,0 +1,19 @@
+touch systemLog.log
+
+echo "Do you want to delete the previous file? Y/N"
+read answer
+
+if [ $answer == "Y" ]
+	then
+	echo "Deleting previous file"
+	rm systemLog.log
+fi
+
+echo "Logged in users: " >> systemLog.log
+who >> systemLog.log
+
+echo "Current date: " >> systemLog.log
+date >> systemLog.log
+
+echo "Current system update: " >> systemLog.log
+uptime >> systemLog.log
